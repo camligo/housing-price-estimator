@@ -1,12 +1,15 @@
+import os
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 
 app = Flask(__name__)
 
-model = joblib.load('model/model.pkl')
-suburbs = joblib.load('model/suburbs.pkl')
-columns_order = joblib.load('model/columns.pkl')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model = joblib.load(os.path.join(BASE_DIR, 'model', 'model.pkl'))
+suburbs = joblib.load(os.path.join(BASE_DIR, 'model', 'suburbs.pkl'))
+columns_order = joblib.load(os.path.join(BASE_DIR, 'model', 'columns.pkl'))
 
 @app.route('/predict', methods=['POST'])
 def predict():
