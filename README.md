@@ -10,3 +10,9 @@
 - Created a form component to input house details
 - Connected the form to the Flask backend via a POST /predict API request
 - Modified paths in app.py to absolute paths
+
+## 28/11/2024
+- Created a /suburbs route in Flask to get a list of suburbs from the backend
+- Updated form to fetch and display suburbs in a dropdown menu
+- Added error messages in the form for cases like missing input fields or failed API requests
+- Updated the Flask backend to handle missing or invalid suburb inputs
